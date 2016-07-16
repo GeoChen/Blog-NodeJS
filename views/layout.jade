@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    title #{title} - Microblog
+    script(src="./javascripts/jquery.min.js")
+    script(src="./javascripts/jquery.min.map")
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.min.css')
+    script(src="./javascripts/bootstrap.min.js")
+
+    style.
+      body{
+      	padding-top: 70px;
+      }
+  body
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      .container
+        a.navbar-brand(href='/') Microblog
+        .collapse.navbar-collapse
+           ul.nav.navbar-nav
+              li.active(role="presentation")
+                a(href="/") 首页
+              if !user
+                li(role="presentation")
+                  a(href="/login") 登陆
+                li(role="presentation")
+                  a(href="/reg") 注册
+              else
+                li(role="presentation")
+                  a(href="/back") 我的微博
+                li(role="presentation")
+                  a(href="/logout") 登出
+    #container.container
+      if sucess
+        .alert.alert-danger #{sucess}
+      if error
+        .alert.alert-danger #{error}
+      block content
+      <hr />
+    footer.container
+      .row
+        .col-sm-12
+          span 
+            |©2016 GeoChen BNU. All rights reserved.
+

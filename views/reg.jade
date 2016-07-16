@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  form.form-horizontal(method="post")
+    fieldset
+      legend用户注册
+      .form-group
+        label.col-sm-2.control-label(for="username")用户名
+        input.input-xlarge#username(type="text",name="username")
+        div(style="margin-left:195px;")
+          p.help-block你的帐户名用于登陆和显示
+      .form-group
+        label.col-sm-2.control-label(for="password")密码 
+        .form
+          input.input-xlarge#password(type="password",name="password")
+      .form-group
+        label.col-sm-2.control-label(for="password-repeat")重复输入密码 
+        .form
+          input.input-xlarge#password-repeat(type="password",name="password-repeat")
+      .form-action
+        div(style="margin-left:195px;")
+          button.btn.btn-primary(type="submit")注册

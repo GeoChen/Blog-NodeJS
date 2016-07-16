@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  if !user
+    include ./allInfo.jade
+  else
+    include ./userInfo.jade

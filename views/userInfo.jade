@@ -1,0 +1,32 @@
+form.form-horizontal(method="post",action="/post")
+ row(style='margin-bottom:5px')
+ .form-group  
+   label.col-sm-1.control-label(for="ptitle1",style="text-align:center")标题 
+   .col-sm-11
+     input.form-control#ptitle1(name="ptitle")
+   <br/>
+ .row
+   textarea.form-control(rows=5,name="passage")
+   <hr/>
+ .form-action
+   .row
+     input.btn.btn-success.pull-right.btn-lg(type="submit",value="发表")
+each post, i in posts
+  if i%3==0
+    <div class="row">
+  .col-md-4
+    .panel.panel-info
+      .panel-heading #{post.ptitle} 
+        |&nbsp;&nbsp;&nbsp; 
+        |strong 作者:
+        i #{post.user}
+      .panel-body
+        p #{post.post}  
+        small #{post.time}
+  if i%3==2
+    </div>
+if posts.length%3!=0
+  </div>
+  
+
+

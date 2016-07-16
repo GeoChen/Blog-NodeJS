@@ -1,0 +1,23 @@
+.jumbotron
+  h1 欢迎来到Chen's MicroBlog
+  p 这是一个基于Nodejs开发的简易微博
+  p
+    a.btn.btn-primary.btn-large(href="/login")登陆
+    a.btn.btn-large(href="/reg")立即注册
+.container
+each post, i in posts
+  if i%3==0
+    <div class="row">
+  .col-md-4
+    .panel.panel-info
+      .panel-heading #{post.ptitle} 
+        |&nbsp;&nbsp;&nbsp; 
+        |strong 作者:
+        i #{post.user}
+      .panel-body
+        p #{post.post}  
+        small #{post.time}
+  if i%3==2
+    </div>
+if posts.length%3!=0
+  </div>    
